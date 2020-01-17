@@ -6,10 +6,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script src="test.js"></script>
+  <style>
+    textarea {
+      display: block;
+    }
+    textarea:focus {
+      height: 200px;
+    }
+    button{
+      display: none;
+      position: absolute;
+      top: 170px;
+      left: 100px;
+    }
+    textarea:focus ~ button {
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
+  <textarea type="text">
+    
+  </textarea>
+  <button>등록</button>
+  <ul>
+    <li>첫번째</li>
+    <li>두번째</li>
+    <li>세번째</li>
+    <li>네번째<span>123</span></li>
+  </ul>
+  <p>adsad</p>
+  <script>
+  var $li = document.querySelectorAll('li');
+  $li[0].style.backgroundColor = "red";
+  console.log($li);
+  console.dir($li[0]);
+  // console.log(document.querySelectorAll('p').innerText);
+
+  var $arr = [11,22,33,44]
+  var $obj = {
+    a: 1,
+    b: 2,
+    c: 3
+  }
+  console.dir(Object);
+  console.dir($li);
+  for (name in $li) {
+    console.log([name]);
+    // $li[name].style.color = 'blue';
+  }
+  
+  for (var i = 0; i < $li.length; i++) {
+    $li[i].addEventListener('click',function(){
+      // window.location.href = "http://www.naver.com";
+      console.log(this.innerText);
+      // console.log(document.querySelectorAll('p').innerText);
+      document.querySelectorAll('p')[0].innerText = i + ' ' + this.innerText;
+    })
+  }
+  </script>
+  <script src="test2.js"></script>
 </body>
 
 </html>
